@@ -23,8 +23,9 @@ namespace portfolio_career_development
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/styles-custom.css",
+                      "~/Content/site.css",
+                      "~/Content/my-styles.css"));
         }
     }
 }
