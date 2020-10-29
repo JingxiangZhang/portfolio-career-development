@@ -1,0 +1,42 @@
+﻿@model portfolio_career_development.Models.Article
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="mt-5 my-5 pt-5 py-5">
+    
+    <section class="page-section bg-primary text-white mb-0" id="about">
+        <div class="container">
+            <!-- Details Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-white">@Model.title</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Details Section Content-->
+            <div class="row">
+                <div class="mr-sm-5 ml-sm-5 mx-sm-5 text-left"><p class="lead">@Model.content</p></div>
+            </div>
+            <!-- Details Section Button-->
+            <div class="text-center mt-4 ">
+                <a class="btn btn-xl btn-outline-light mr-5 mx-5" href=@Url.Action("Index","Home")>
+                    <i class="fas fa-home mr-2"></i>
+                    Go to Home
+                </a>
+
+                @*TODO : Modify controller to mark as read*@
+                <a class="btn btn-xl btn-outline-light ml-5 mx-5" href=@Url.Action("Index","Home")>
+                    <i class="fas fa-check mr-2"aria-hidden="true"></i>
+                    Mark as Read
+                </a>
+            </div>
+        </div>
+    </section>
+    
+
+</div>

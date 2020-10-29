@@ -29,5 +29,7 @@ namespace portfolio_career_development.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<portfolio_career_development.Models.Article> Articles { get; set; }
     }
 }
