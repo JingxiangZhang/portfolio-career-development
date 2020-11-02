@@ -3,53 +3,24 @@
     ViewBag.Title = "Home";
 }
 
-<div class="mt-5 my-5">
+<div class="mt-5 my-5 pt-3 py-3 mr-0 mx-0">
 
-    <!-- Article Section-->
-    <section class="page-section portfolio" id="portfolio">
-        <div class="container">
-            <!-- Article Section Heading-->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Articles</h2>
+    <header class="masthead bg-primary text-white text-center" style="min-width: 100%; min-height: 100%;">
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Avatar Image-->
+            <img class="masthead-avatar mb-5" src="~/Content/Images/prof.png" alt="" />
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading text-uppercase mb-0">career development</h1>
             <!-- Icon Divider-->
-            <div class="divider-custom">
+            <div class="divider-custom divider-light">
                 <div class="divider-custom-line"></div>
                 <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
-            
-            
-            @if (!Model.Any())
-            {
-                <h4 class="page-section-heading text-center text-uppercase text-secondary mb-0">We don't have any Articles yet.</h4>
-               
-            }
-            else
-            {
-                <!-- Article Grid Items-->
-                <div class="row">
-                    @{
-                        int articleCounter = 1;
-                    }
-                    @foreach (var article in Model)
-                    {
-                        <div class="col-md-6 col-lg-4 mb-5">
-                            <h2 class=" text-center  text-secondary mb-2">Article @articleCounter </h2>
-                            <a class="portfolio-item mx-auto"  href=@Url.Action("Details","Home", new {id=article.id})>
-                                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                    <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                                </div>
-                                <img class="img-fluid" src="~/Content/Images/career.png" alt="" />
-                            </a>
-                        </div>
-
-                        articleCounter += 1;
-                    }
-                </div>
-            }
-
+            <!-- Masthead Subheading-->
+            <p class="masthead-subheading font-weight-light mb-0">Boost Your Career Today !</p>
         </div>
-    </section>
-    
+    </header>
 
 </div>
 

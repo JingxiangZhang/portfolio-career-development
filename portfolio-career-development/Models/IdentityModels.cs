@@ -31,5 +31,7 @@ namespace portfolio_career_development.Models
         }
 
         public System.Data.Entity.DbSet<portfolio_career_development.Models.Article> Articles { get; set; }
+
+        public System.Data.Entity.DbSet<portfolio_career_development.Models.Webinar> Webinars { get; set; }
     }
 }

@@ -168,15 +168,35 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\WebinarsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010271833431_InitialCreate.cs" />
+    <Compile Include="Migrations\202010271833431_InitialCreate.Designer.cs">
+      <DependentUpon>202010271833431_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011011244313_InitialModel.cs" />
+    <Compile Include="Migrations\202011011244313_InitialModel.Designer.cs">
+      <DependentUpon>202011011244313_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011011618280_ArticleModelUpdated_Mutlilinetext_content.cs" />
+    <Compile Include="Migrations\202011011618280_ArticleModelUpdated_Mutlilinetext_content.Designer.cs">
+      <DependentUpon>202011011618280_ArticleModelUpdated_Mutlilinetext_content.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011020948296_webinarModelAdded.cs" />
+    <Compile Include="Migrations\202011020948296_webinarModelAdded.Designer.cs">
+      <DependentUpon>202011020948296_webinarModelAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ArticleModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\WebinarModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\ListArticleViewModel.cs" />
@@ -241,7 +261,16 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Navbar.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Articles\Create.cshtml" />
+    <Content Include="Views\Articles\Delete.cshtml" />
+    <Content Include="Views\Articles\Details.cshtml" />
+    <Content Include="Views\Articles\Edit.cshtml" />
+    <Content Include="Views\Articles\Index.cshtml" />
+    <Content Include="Views\Webinars\Create.cshtml" />
+    <Content Include="Views\Webinars\Delete.cshtml" />
+    <Content Include="Views\Webinars\Details.cshtml" />
+    <Content Include="Views\Webinars\Edit.cshtml" />
+    <Content Include="Views\Webinars\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -259,6 +288,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202010271833431_InitialCreate.resx">
+      <DependentUpon>202010271833431_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011011244313_InitialModel.resx">
+      <DependentUpon>202011011244313_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011011618280_ArticleModelUpdated_Mutlilinetext_content.resx">
+      <DependentUpon>202011011618280_ArticleModelUpdated_Mutlilinetext_content.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011020948296_webinarModelAdded.resx">
+      <DependentUpon>202011020948296_webinarModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,42 @@
+﻿@model portfolio_career_development.Models.Webinar
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="mt-5 my-5 pt-5 py-5">
+    <section class="page-section bg-primary text-white mb-0">
+        <div class="container">
+            <h2 class="page-section-heading text-center text-uppercase text-white">@Html.DisplayFor(model => model.Topic)</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+
+            <div class="row">
+                <div class="mr-sm-5 ml-sm-5 mx-sm-5 text-left">
+
+                    <p class="lead">
+                        @Html.DisplayFor(model => model.About)
+                    </p>
+                </div>
+            </div>
+            <div class="text-center mt-4 ">
+
+                <a class="btn btn-xl btn-outline-light mr-5 mx-5" href=@Url.Action("Edit","Webinars", new { id = Model.Id })>
+                    <i class="fas fa-edit mr-2"></i>
+                    Edit
+                </a>
+
+                <a class="btn btn-xl btn-outline-light mr-5 mx-5" href=@Url.Action("Index")>
+                    <i class="fas fa-arrow-alt-circle-left mr-2" aria-hidden="true"></i>
+                    Back to Webinar List
+                </a>
+
+            </div>
+        </div>
+    </section>
+</div>

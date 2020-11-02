@@ -1,0 +1,74 @@
+﻿@model portfolio_career_development.Models.Article
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="mt-5 my-5 pt-3 py-3">
+    <section class="page-section" id="articleEdit">
+        <div class="container">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+    
+                <div class="form-horizontal">
+                    
+                    <h4 class="page-section-heading text-center text-uppercase text-secondary mb-0">Edit Article</h4>
+                    <div class="divider-custom">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.Id)
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                            @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Content, new { htmlAttributes = new { @class = "form-control col-md-10" } })
+                            @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.DateTimeCreated, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.DateTimeCreated, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.DateTimeCreated, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class=" mt-4">
+
+                        <div class="btn btn-info   ml-5 mx-5">
+                            <input type="submit" value="Save" class="btn btn-info btn-lg btn-block"/>
+                        </div>
+
+                        <a class="btn btn-primary btn-xl ml-5 mx-5" href=@Url.Action("Index")>
+                            <i class="fas fa-arrow-alt-circle-left mr-2" aria-hidden="true"></i>
+                            Back to Article List
+                        </a>
+
+                    </div>
+                </div>
+            }
+
+            <div>
+
+            </div>
+        </div>
+    </section>
+</div>
+
+

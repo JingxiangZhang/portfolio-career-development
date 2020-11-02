@@ -2534,6 +2534,18 @@ fieldset:disabled a.btn {
   background-color: #28a745;
   border-color: #28a745;
 }
+
+.btn-custom-blue {
+    color: #fff;
+    background-color: #2196f3;
+    border-color: #2196f3;
+}
+
+.btn-custom-blue:hover{
+    color: #fff;
+    background-color: #2196f3;
+    border-color: #2196f3;
+}
 .btn-success:hover {
   color: #fff;
   background-color: #218838;
