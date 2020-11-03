@@ -13,6 +13,29 @@
                 <h4>Create a new account.</h4>
                 <hr />
                 @Html.ValidationSummary("", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.firstName, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.firstName, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.lastName, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.lastName, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.contactNumber, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.contactNumber, new { @class = "form-control" })
+                    </div>
+                </div>
+
+
                 <div class="form-group">
                     @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
                     <div class="col-md-10">
@@ -31,21 +54,26 @@
                         @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
                     </div>
                 </div>
-                <div class="mt-4">
-                    <div class="btn btn-primary btn-lg ">
-                        <input type="submit" class="btn btn-primary btn-lg btn-block" value="Register" />
+
+                <div class="form-group ">
+                    @Html.LabelFor(m => m.roleType, new { @class = "col-md-2 control-label" })
+                    <div class="col col-lg-2">
+                        Staff
+                        @Html.RadioButtonFor(model => model.roleType, "Staff", new { @class = "control-label" })
                     </div>
+                    <div class="col col-lg-2">
+                        Customer
+                        @Html.RadioButtonFor(model => model.roleType, "Customer", new { @class = "control-label" })
+                    </div>
+
+
                 </div>
+
+                <input type="submit" value="Register" class="btn btn-success btn-lg " />
             }
         </div>
     </section>
 </div>
-
-
-
-
-<h2>@ViewBag.Title.</h2>
-
 
 
 @section Scripts {

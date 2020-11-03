@@ -10,6 +10,7 @@ namespace portfolio_career_development.Controllers
 {
     public class HomeController : Controller
     {
+        [AllowAnonymous]
         public ViewResult Index()
         {
 

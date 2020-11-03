@@ -17,7 +17,11 @@ namespace portfolio_career_development.Controllers
         // GET: Webinars
         public ActionResult Index()
         {
-            return View(db.Webinars.ToList());
+            if (User.IsInRole(RoleName.STAFF_USER))
+            {
+                return View("List");
+            }
+            return View("ReadonlyList");
         }
 
         // GET: Webinars/Details/5
@@ -36,6 +40,7 @@ namespace portfolio_career_development.Controllers
         }
 
         // GET: Webinars/Create
+        [Authorize(Roles = RoleName.STAFF_USER)]
         public ActionResult Create()
         {
             return View();
@@ -46,6 +51,7 @@ namespace portfolio_career_development.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.STAFF_USER)]
         public ActionResult Create([Bind(Include = "Id,Topic,About,DateWebinar")] Webinar webinar)
         {
             if (ModelState.IsValid)
@@ -59,6 +65,7 @@ namespace portfolio_career_development.Controllers
         }
 
         // GET: Webinars/Edit/5
+        [Authorize(Roles = RoleName.STAFF_USER)]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,6 +85,7 @@ namespace portfolio_career_development.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.STAFF_USER)]
         public ActionResult Edit([Bind(Include = "Id,Topic,About,DateWebinar")] Webinar webinar)
         {
             if (ModelState.IsValid)
@@ -90,6 +98,7 @@ namespace portfolio_career_development.Controllers
         }
 
         // GET: Webinars/Delete/5
+        [Authorize(Roles = RoleName.STAFF_USER)]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -107,6 +116,7 @@ namespace portfolio_career_development.Controllers
         // POST: Webinars/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.STAFF_USER)]
         public ActionResult DeleteConfirmed(int id)
         {
             Webinar webinar = db.Webinars.Find(id);

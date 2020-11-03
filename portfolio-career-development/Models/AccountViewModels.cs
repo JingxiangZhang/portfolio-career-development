@@ -64,6 +64,25 @@ namespace portfolio_career_development.Models
 
     public class RegisterViewModel
     {
+        [Required(ErrorMessage = "Please Enter the First Name !")]
+        [StringLength(20, MinimumLength = 2)]
+        [Display(Name = "First Name")]
+        public string firstName { get; set; }
+
+        [Required(ErrorMessage = "Please Enter the Last Name !")]
+        [StringLength(20, MinimumLength = 2)]
+        [Display(Name = "Last Name")]
+        public string lastName { get; set; }
+
+        [Required(ErrorMessage = "Please Enter the Contact number !")]
+        [Display(Name = "Contact Number")]
+        [DataType(DataType.PhoneNumber)]
+        public string contactNumber { get; set; }
+
+        [Required]
+        [Display(Name = "Register as")]
+        public string roleType { get; set; }
+        
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

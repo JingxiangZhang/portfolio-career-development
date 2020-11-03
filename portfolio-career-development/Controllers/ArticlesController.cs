@@ -17,7 +17,12 @@ namespace portfolio_career_development.Controllers
         // GET: Articles
         public ActionResult Index()
         {
-            return View(db.Articles.ToList());
+            if (User.IsInRole(RoleName.STAFF_USER))
+            {
+                return View("List");
+            }
+         
+            return View("ReadonlyList");
         }
 
         // GET: Articles/Details/5
@@ -36,6 +41,7 @@ namespace portfolio_career_development.Controllers
         }
 
         // GET: Articles/Create
+        [Authorize(Roles = RoleName.STAFF_USER)]
         public ActionResult Create()
         {
             return View();
@@ -59,6 +65,7 @@ namespace portfolio_career_development.Controllers
         }
 
         // GET: Articles/Edit/5
+        [Authorize(Roles = RoleName.STAFF_USER)]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,6 +85,7 @@ namespace portfolio_career_development.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.STAFF_USER)]
         public ActionResult Edit([Bind(Include = "Id,Title,Content,DateTimeCreated")] Article article)
         {
             if (ModelState.IsValid)
@@ -90,6 +98,7 @@ namespace portfolio_career_development.Controllers
         }
 
         // GET: Articles/Delete/5
+        [Authorize(Roles = RoleName.STAFF_USER)]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -107,6 +116,7 @@ namespace portfolio_career_development.Controllers
         // POST: Articles/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = RoleName.STAFF_USER)]
         public ActionResult DeleteConfirmed(int id)
         {
             Article article = db.Articles.Find(id);
