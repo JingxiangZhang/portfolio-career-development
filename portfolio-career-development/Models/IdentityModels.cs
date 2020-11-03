@@ -10,7 +10,7 @@ namespace portfolio_career_development.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-        [Required(ErrorMessage = "Please Enter the First Name !")]
+        /*[Required(ErrorMessage = "Please Enter the First Name !")]
         [StringLength(20, MinimumLength = 2)]
         [Display(Name = "First Name")]
         public string firstName { get; set; }
@@ -23,7 +23,7 @@ namespace portfolio_career_development.Models
         [Required(ErrorMessage = "Please Enter the Contact number !")]
         [Display(Name = "Contact Number")]
         [DataType(DataType.PhoneNumber)]
-        public string contactNumber { get; set; }
+        public string contactNumber { get; set; }*/
         
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)

@@ -155,10 +155,7 @@ namespace portfolio_career_development.Controllers
                 var user = new ApplicationUser 
                 { 
                     UserName = model.Email, 
-                    Email = model.Email,
-                    firstName = model.firstName,
-                    lastName = model.lastName,
-                    contactNumber = model.contactNumber
+                    Email = model.Email
                 };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
@@ -382,13 +379,25 @@ namespace portfolio_career_development.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email, 
+                    Email = model.Email
+                };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
+
                     result = await UserManager.AddLoginAsync(user.Id, info.Login);
                     if (result.Succeeded)
                     {
+
+                        if (model.roleType == "Staff")
+                        {
+                            await UserManager.AddToRoleAsync(user.Id, RoleName.STAFF_USER);
+                        }
+
+
                         await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                         return RedirectToLocal(returnUrl);
                     }

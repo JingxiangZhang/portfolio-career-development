@@ -219,6 +219,10 @@
     <Compile Include="Migrations\202011031322587_SeedRoles.Designer.cs">
       <DependentUpon>202011031322587_SeedRoles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011031638521_userDB_back_to_default.cs" />
+    <Compile Include="Migrations\202011031638521_userDB_back_to_default.Designer.cs">
+      <DependentUpon>202011031638521_userDB_back_to_default.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ArticleModels.cs" />
@@ -517,6 +521,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011031322587_SeedRoles.resx">
       <DependentUpon>202011031322587_SeedRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011031638521_userDB_back_to_default.resx">
+      <DependentUpon>202011031638521_userDB_back_to_default.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

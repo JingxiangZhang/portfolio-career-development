@@ -24,6 +24,41 @@
             @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
         </div>
     </div>
+
+    @*<div class="form-group">
+        @Html.LabelFor(m => m.firstName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.firstName, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.lastName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.lastName, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.contactNumber, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.contactNumber, new { @class = "form-control" })
+        </div>
+    </div>*@
+
+    <div class="form-group ">
+        @Html.LabelFor(m => m.roleType, new { @class = "col-md-2 control-label" })
+        <div class="col col-lg-2">
+            Staff
+            @Html.RadioButtonFor(model => model.roleType, "Staff", new { @class = "control-label" })
+        </div>
+        <div class="col col-lg-2">
+            Customer
+            @Html.RadioButtonFor(model => model.roleType, "Customer", new { @class = "control-label" })
+        </div>
+    </div>
+
+
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" class="btn btn-default" value="Register" />

@@ -5,6 +5,26 @@ namespace portfolio_career_development.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
+        /*[Required(ErrorMessage = "Please Enter the First Name !")]
+        [StringLength(20, MinimumLength = 2)]
+        [Display(Name = "First Name")]
+        public string firstName;
+
+        [Required(ErrorMessage = "Please Enter the Last Name !")]
+        [StringLength(20, MinimumLength = 2)]
+        [Display(Name = "Last Name")]
+        public string lastName;
+
+
+        [Required(ErrorMessage = "Please Enter the Contact number !")]
+        [Display(Name = "Contact Number")]
+        [DataType(DataType.PhoneNumber)]
+        public string contactNumber;*/
+
+        [Required]
+        [Display(Name = "Register as")]
+        public string roleType;
+
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -64,7 +84,7 @@ namespace portfolio_career_development.Models
 
     public class RegisterViewModel
     {
-        [Required(ErrorMessage = "Please Enter the First Name !")]
+        /*[Required(ErrorMessage = "Please Enter the First Name !")]
         [StringLength(20, MinimumLength = 2)]
         [Display(Name = "First Name")]
         public string firstName { get; set; }
@@ -77,7 +97,7 @@ namespace portfolio_career_development.Models
         [Required(ErrorMessage = "Please Enter the Contact number !")]
         [Display(Name = "Contact Number")]
         [DataType(DataType.PhoneNumber)]
-        public string contactNumber { get; set; }
+        public string contactNumber { get; set; }*/
 
         [Required]
         [Display(Name = "Register as")]
