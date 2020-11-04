@@ -52,7 +52,7 @@ namespace portfolio_career_development.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = RoleName.STAFF_USER)]
-        public ActionResult Create([Bind(Include = "Id,Topic,About,DateWebinar")] Webinar webinar)
+        public ActionResult Create([Bind(Include = "Id,Topic,About,CoursePrice,DateWebinar")] Webinar webinar)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace portfolio_career_development.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = RoleName.STAFF_USER)]
-        public ActionResult Edit([Bind(Include = "Id,Topic,About,DateWebinar")] Webinar webinar)
+        public ActionResult Edit([Bind(Include = "Id,Topic,About,CoursePrice,DateWebinar")] Webinar webinar)
         {
             if (ModelState.IsValid)
             {

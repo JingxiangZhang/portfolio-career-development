@@ -23,5 +23,15 @@ namespace portfolio_career_development.Controllers
             
             return View();
         }
+
+        public ActionResult ExpertContact()
+        {
+            return View();
+        }
+
+        public ActionResult GymSearch()
+        {
+            return View();
+        }
     }
 }

@@ -6,14 +6,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            @Html.ActionLink("Career Development Portal", "Index", "Home", 
+            @Html.ActionLink("365 Days Fitness", "Index", "Home", 
                 new { area = "" }, new { @class = "navbar-brand" })
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Articles", "Index", "Articles")</li>
-                <li>@Html.ActionLink("Webinars", "Index", "Webinars")</li>
-                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li>@Html.ActionLink("Health News", "Index", "Articles")</li>
+                <li>@Html.ActionLink("Fitness Courses", "Index", "Webinars")</li>
+                <li>@Html.ActionLink("Ask From a Expert", "ExpertContact", "Home")</li>
+                <li>@Html.ActionLink("Gym Search", "GymSearch", "Home")</li>
+                <li>@Html.ActionLink("Contact us", "Contact", "Home")</li>
             </ul>
             @Html.Partial("_LoginPartial")
         </div>

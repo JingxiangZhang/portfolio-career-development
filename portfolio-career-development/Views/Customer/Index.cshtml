@@ -1,0 +1,74 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="mt-5 my-5 pt-3 py-3">
+    <section class="page-section" id="articleDelete">
+        <div class="container">
+            <div class="form-horizontal">
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Customer page</h2>
+                <hr />
+            </div>
+        </div>
+    </section>
+</div>
+<br/>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card border-info mb-3" style="max-width: 18rem;">
+                <div class="card-header">User Information</div>
+                <hr/>
+                <div class="card-body text-info">
+                    <a href=@Url.Action("CustomerInfo") class="btn btn-info btn-lg" role="button">Customer Information</a>
+                    <hr/>
+                    <p class="card-text">This Page Contains Customer Specific Information.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="card border-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">Eat Healthy ! Stay Healthy !</div>
+                <hr />
+                <div class="card-body text-success">
+                    <a href=@Url.Action("FoodRecommendation") class="btn btn-success btn-lg" role="button">Food Recommendation</a>
+                    <hr />
+                    <p class="card-text">This Page Contains Healthy Menus for diets.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="card border-warning mb-3" style="max-width: 18rem;">
+                <div class="card-header">Find a Gym near to you</div>
+                <hr />
+                <div class="card-body text-warning">
+                    <a href=@Url.Action("GymBooking") class="btn btn-warning btn-lg" role="button">Book a Gym</a>
+                    <hr />
+                    <p class="card-text">This Page Contains details about available gyms in your area.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="card border-danger  mb-3" style="max-width: 18rem;">
+                <div class="card-header">Lets Take a private Lesson !</div>
+                <hr />
+                <div class="card-body text-danger ">
+                    <a href=@Url.Action("PrivateLesson") class="btn btn-danger  btn-lg" role="button">Book a Private session</a>
+                    <hr />
+                    <p class="card-text">This Page Contains details about private fitness couching sessions.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
